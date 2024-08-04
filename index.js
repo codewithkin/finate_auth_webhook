@@ -5,6 +5,8 @@ const port = 3000;
 import {config} from "dotenv";
 config()
 
+app.use(cors());
+
 app.use(express.json()); // for parsing application/json
 
 app.post('/webhook/clerk', async (req, res) => {
