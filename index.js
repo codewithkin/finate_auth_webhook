@@ -10,6 +10,9 @@ app.use(express.json()); // for parsing application/json
 app.post('/webhook/clerk', async (req, res) => {
   const { id, email_addresses } = req.body;
 
+  console.log("REQUEST MADE");
+  console.log(req.body);
+
   // Extract user details from the request
   const userId = id;
   const email = email_addresses[0]?.email_address;
