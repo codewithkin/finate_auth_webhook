@@ -26,8 +26,9 @@ app.post(
     // Get the headers and body
     const headers = req.headers;
     const payload = `${req.body}`;
+    console.log("Signature: ", headers["svix-signature"])
 
-    console.log(req.body);
+    console.log(payload);
 
     // Get the Svix headers for verification
     const svix_id = headers["svix-id"];
