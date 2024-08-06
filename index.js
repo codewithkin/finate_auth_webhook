@@ -47,23 +47,6 @@ app.post(
 
     let evt;
 
-    // Attempt to verify the incoming webhook
-    // If successful, the payload will be available from 'evt'
-    // If the verification fails, error out and  return error code
-    try {
-      evt = wh.verify(payload, {
-        "svix-id": svix_id,
-        "svix-timestamp": svix_timestamp,
-        "svix-signature": svix_signature,
-      });
-    } catch (err) {
-      console.log("Error verifying webhook:", err.message);
-      return res.status(400).json({
-        success: false,
-        message: err.message,
-      });
-    }
-
     // Create a new user in supabase
     const { id, email_addresses } = evt.data;
 
