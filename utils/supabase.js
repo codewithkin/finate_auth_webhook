@@ -16,7 +16,6 @@ async function updateSupabaseUser(user) {
     }, { onConflict: ['id'] });
 
   if (error) throw error;
-  return data;
 }
 
 export default updateSupabaseUser;
