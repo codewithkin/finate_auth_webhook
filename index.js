@@ -67,9 +67,6 @@ app.post(
     // Create a new user in supabase
     const { id, email_addresses } = evt.data;
 
-    console.log("REQUEST MADE");
-    console.log(evt.data);
-
     try {
       // Update Supabase with the new user
       await updateSupabaseUser(evt.data);
@@ -79,11 +76,6 @@ app.post(
       console.error(error);
       res.status(500).send('Error updating user');
     }
-
-    return res.status(200).json({
-      success: true,
-      message: "Webhook received",
-    });
   }
 );
 
