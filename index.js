@@ -6,7 +6,7 @@ const port = 3000;
 import express from "express"
 const app = express();
 app.use(cors());
-import {updateSupabaseUser} from "./utils/supabase";
+import updateSupabaseUser from "./utils/supabase";
 
 app.use(express.json()); // for parsing application/json
 

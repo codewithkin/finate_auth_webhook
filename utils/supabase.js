@@ -16,3 +16,5 @@ async function updateSupabaseUser(user) {
   if (error) throw error;
   return data;
 }
+
+export default updateSupabaseUser;
