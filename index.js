@@ -30,6 +30,8 @@ app.post(
     const headers = req.headers;
     const payload = req.body;
 
+    console.log(req.body);
+
     // Get the Svix headers for verification
     const svix_id = headers["svix-id"];
     const svix_timestamp = headers["svix-timestamp"];
