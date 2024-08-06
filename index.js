@@ -15,9 +15,6 @@ import bodyParser from "body-parser";
 
 app.post(
   "/api/webhooks",
-  // This is a generic method to parse the contents of the payload.
-  // Depending on the framework, packages, and configuration, this may be
-  // different or not required.
   bodyParser.raw({ type: "application/json" }),
   async function (req, res) {
     // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -28,7 +25,7 @@ app.post(
 
     // Get the headers and body
     const headers = req.headers;
-    const payload = req.body;
+    const payload = `${req.body}`;
 
     console.log(req.body);
 
